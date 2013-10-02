@@ -29,7 +29,7 @@ void str_cat(char** dest, char* src)
     else
     {
       destLength=strlen(*dest);
-      if((tempBuffer = (char*)realloc(tempBuffer,destLength+srcLength+2))!=NULL)
+      if((tempBuffer=(char*)realloc(tempBuffer,destLength+srcLength+2))!=NULL)
       {
         strcat(tempBuffer,src);
         strcat(tempBuffer,"!");

@@ -50,6 +50,6 @@ int main(int argc, char *argv[])
     str_cpy(&s, "Hola Hola");
     str_cpy(&s, s+5);
     str_cat(&s, " World");
-    puts(s); /* result: "Hola World!" */
+    puts(s); /* result should be: "Hola World!" */ //it worked for me (hod)
     return 0;
 }

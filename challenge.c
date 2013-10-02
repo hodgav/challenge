@@ -38,7 +38,7 @@ void str_cat(char** s, char* t)
             *s=tempBuffer;
         }
 	else
-        fprintf(stderr,"Error: malloc failed! (str_cat)\n");
+            fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
 }
 

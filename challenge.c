@@ -29,7 +29,7 @@ void str_cat(char** s, char* t)
     {
         if((tempBuffer = (char*)malloc(strlen(*s)+strlen(t)+2))!=NULL)
         {
-            tempBuffer[0] = '\0';
+            tempBuffer[0]='\0';
             strcat(tempBuffer,*s);
             strcat(tempBuffer,t);
             strcat(tempBuffer,"!");

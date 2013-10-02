@@ -3,40 +3,38 @@
 #include <string.h>
 #include <stdarg.h>
 
-void str_cpy(char** s, char* t) 
-{
-    char* tempBuffer=NULL;    
-    if((tempBuffer=(char*)malloc(strlen(t)+1))!=NULL)
-        strcpy(tempBuffer,t);
-    else
-        fprintf(stderr,"Error: malloc failed! (str_cpy)\n");
-    if (*s!=NULL) 
-        free(*s);
-    *s=tempBuffer;	
-}
-
-void str_cat(char** s, char* t) 
+void str_cpy(char** dest, char* src)
 {
     char* tempBuffer=NULL;
-    if (*s==NULL) 
+    if((tempBuffer=(char*)malloc(strlen(src)+1))!=NULL)
+        strcpy(tempBuffer,src);
+    else
+        fprintf(stderr,"Error: malloc failed! (str_cpy)\n");
+    free(*dest);
+    *dest=tempBuffer;	
+}
+
+
+void str_cat(char** dest, char* src) 
+{
+	int destLength,srcLength=strlen(src);
+	char* tempBuffer=*dest;
+    if (tempBuffer==NULL) 
     {
-        if((*s=(char*)malloc(strlen(t)+1))!=NULL)
-            strcpy(*s,t);
-	else
+        if((tempBuffer=(char*)malloc(srcLength+1))!=NULL)
+            strcpy(tempBuffer,src);
+	    else
             fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
     else
     {
-        if((tempBuffer = (char*)malloc(strlen(*s)+strlen(t)+2))!=NULL)
+		destLength=strlen(*dest);
+        if((tempBuffer = (char*)realloc(tempBuffer,destLength+srcLength+2))!=NULL)
         {
-            tempBuffer[0]='\0';
-            strcat(tempBuffer,*s);
-            strcat(tempBuffer,t);
+            strcat(tempBuffer,src);
             strcat(tempBuffer,"!");
-            free(*s);
-            *s=tempBuffer;
         }
-	else
+	    else
             fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
 }
@@ -47,6 +45,5 @@ int main(int argc, char *argv[])
     str_cpy(&s, "Hola Hola");
     str_cpy(&s, s+5);
     str_cat(&s, " World");
-    puts(s); /* result should be: "Hola World!" */ //it worked for me (hod)
-    return 0;
+    puts(s); /* result should be: "Hola World!" */
 }

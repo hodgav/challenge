@@ -51,5 +51,5 @@ int main(int argc, char *argv[])
     str_cpy(&s, s+5);
     str_cat(&s, " World");
     puts(s); /* result: "Hola World!" */
-	return 0;
+    return 0;
 }

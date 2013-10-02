@@ -6,7 +6,7 @@
 void str_cpy(char** s, char* t) 
 {
     char* tempBuffer=NULL;    
-    if((tempBuffer=(char*)malloc(strlen(t) + 1))!=NULL)
+    if((tempBuffer=(char*)malloc(strlen(t)+1))!=NULL)
         strcpy(tempBuffer,t);
     else
         fprintf(stderr,"Error: malloc failed! (str_cpy)\n");

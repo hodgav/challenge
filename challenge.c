@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdarg.h>
 
-
 void str_cpy(char** s, char* t) 
 {
     char* tempBuffer=NULL;    
@@ -41,8 +40,6 @@ void str_cat(char** s, char* t)
             fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
 }
-
-
 
 int main(int argc, char *argv[])
 {

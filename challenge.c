@@ -17,25 +17,25 @@ void str_cpy(char** dest, char* src)
 
 void str_cat(char** dest, char* src) 
 {
-	int destLength,srcLength=strlen(src);
-	char* tempBuffer=*dest;
+    int destLength,srcLength=strlen(src);
+    char* tempBuffer=*dest;
     if (tempBuffer==NULL) 
     {
-        if((tempBuffer=(char*)malloc(srcLength+1))!=NULL)
-            strcpy(tempBuffer,src);
-	    else
-            fprintf(stderr,"Error: malloc failed! (str_cat)\n");
+      if((tempBuffer=(char*)malloc(srcLength+1))!=NULL)
+          strcpy(tempBuffer,src);
+      else
+          fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
     else
     {
-		destLength=strlen(*dest);
-        if((tempBuffer = (char*)realloc(tempBuffer,destLength+srcLength+2))!=NULL)
-        {
-            strcat(tempBuffer,src);
-            strcat(tempBuffer,"!");
-        }
-	    else
-            fprintf(stderr,"Error: malloc failed! (str_cat)\n");
+      destLength=strlen(*dest);
+      if((tempBuffer = (char*)realloc(tempBuffer,destLength+srcLength+2))!=NULL)
+      {
+        strcat(tempBuffer,src);
+        strcat(tempBuffer,"!");
+      }
+      else
+        fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
 }
 

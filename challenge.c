@@ -35,7 +35,7 @@ void str_cat(char** dest, char* src)
         strcat(tempBuffer,"!");
       }
       else
-        fprintf(stderr,"Error: malloc failed! (str_cat)\n");
+        fprintf(stderr,"Error: realloc failed! (str_cat)\n");
     }
 }
 

@@ -23,7 +23,7 @@ void str_cat(char** s, char* t)
     {
         if((*s=(char*)malloc(strlen(t)+1))!=NULL)
             strcpy(*s,t);
-	    else
+	else
             fprintf(stderr,"Error: malloc failed! (str_cat)\n");
     }
     else

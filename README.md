@@ -6,3 +6,16 @@ GUIDELINES:
     The code you write needs to be "library quality"; as good as you would expect a good libc to implement such functions.
     At the top of the page, you see 4 includes - indicating the functions that can be used to implement str_cpy() and str_cat().
     FYI: It is possible to implement str_cpy() and str_cat() efficiently in no more than 7 lines of code per function, and in less than 5 minutes.
+    
+    
+    
+    
+    comments from the company:
+    Hi Hod,
+
+Thanks for your solution to the Hola challenge.
+Before I can give you a detailed feedback for your solution, there are some major bugs in your code which may have been caused by a hasty submission.
+
+I suggest you re-read your solution very carefully, fix it up, and resubmit.
+
+In addition, please note, we are looking for generic implementations of str_cpy and str_cat, which will work well in any  reasonable use-case. 
